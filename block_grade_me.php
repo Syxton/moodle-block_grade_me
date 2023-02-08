@@ -40,7 +40,14 @@ class block_grade_me extends block_base {
     function get_content() {
         global $CFG, $USER, $COURSE, $DB, $OUTPUT, $PAGE;
 
-        if ($this->content !== NULL) {
+        $context = context_course::instance($this->page->course->id);
+        $isteacher = has_capability('block/grade_me:viewblock', $context);
+
+        if(!$isteacher) {
+            return $this->content;
+        }
+
+        if ($this->content !== null) {
             return $this->content;
         }
 
