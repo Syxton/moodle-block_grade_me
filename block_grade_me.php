@@ -100,7 +100,7 @@ class block_grade_me extends block_base {
             $params['courseid'] = $courseid;
 
             foreach ($enabledplugins as $plugin => $a) {
-                if (has_capability($a['capability'], $context)) {
+                if (get_capability_info($a['capability']) && has_capability($a['capability'], $context)) {
                     $fn = 'block_grade_me_query_' . $plugin;
                     $pluginfn = $fn($gradebookusers);
                     if ($pluginfn !== false) {
