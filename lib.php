@@ -166,11 +166,11 @@ function block_grade_me_tree($course) {
             $moduleicon = $OUTPUT->pix_icon('icon', $moduletitle, $itemmodule, array('class' => 'gm_icon'));
         }
 
-        $text .= '<dd id="cmid' . $coursemoduleid . '" class="module">' . "\n";  // Open module.
+        $text .= '<dd id="cmid' . $itemmodule . $coursemoduleid . '" class="module">' . "\n";  // Open module.
         $text .= '<div class="dd-wrap">' . "\n";
         $text .= '<div tabindex=0 class="toggle fa fa-caret-right" aria-hidden="true"
-                    onclick="$(\'dd#cmid' . $coursemoduleid . ' > div div.toggle\')
-                    .toggleClass(\'open\');$(\'dd#cmid' . $coursemoduleid . ' > ul\')
+                    onclick="$(\'dd#cmid' . $itemmodule . $coursemoduleid . ' > div div.toggle\')
+                    .toggleClass(\'open\');$(\'dd#cmid' . $itemmodule . $coursemoduleid . ' > ul\')
                     .toggleClass(\'block_grade_me_hide\');">
                         <span class="sr-only">Toggle Section</span>
                     </div>' . "\n";
