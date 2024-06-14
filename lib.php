@@ -149,7 +149,7 @@ function block_grade_me_tree($course) {
         unset($item['meta']);
 
         if ($itemmodule == 'wholeforum') {
-            $modulelink = '/mod/forum/view.php?id=' . $coursemoduleid;
+            $modulelink = $CFG->wwwroot . '/mod/forum/view.php?id=' . $coursemoduleid;
         } else {
             $modulelink = $CFG->wwwroot . '/mod/' . $itemmodule . '/view.php?id=' . $coursemoduleid;
         }
